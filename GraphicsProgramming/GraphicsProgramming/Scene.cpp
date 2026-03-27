@@ -16,6 +16,9 @@ Scene::Scene(Input *in)
 		SOIL_FLAG_MIPMAPS | SOIL_FLAG_NTSC_SAFE_RGB | SOIL_FLAG_COMPRESS_TO_DXT);
 
 	// Initialise scene variables
+	shapeBuilder.GenerateDisc(1.0f, 32);
+	shapeBuilder.GenerateSphere(1.0f, 32, 16);
+	shapeBuilder.GenerateCylinder(1.0f, 2.0f, 32);
 	
 }
 
@@ -58,7 +61,8 @@ void Scene::render() {
 	//basic_shape.render3(myTexture);
 
 	//shapeBuilder.RenderDisc(1.f, 3.f);
-	shapeBuilder.RenderSphere(2.f, 30, 30);
+	//shapeBuilder.RenderSphere(2.f, 30, 30);
+	shapeBuilder.RenderCylinderVA();
 	// End render geometry --------------------------------------
 
 	// Render text, should be last object rendered.
